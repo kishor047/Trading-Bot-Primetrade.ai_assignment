@@ -1,0 +1,3 @@
+2026-06-03 02:19:30,357 | ERROR | trading_bot | Missing API credentials. Set BINANCE_API_KEY and BINANCE_API_SECRET.
+2026-06-03 02:19:30,468 | ERROR | trading_bot | Missing API credentials. Set BINANCE_API_KEY and BINANCE_API_SECRET.
+2026-06-03 02:19:30,577 | ERROR | trading_bot | Missing API credentials. Set BINANCE_API_KEY and BINANCE_API_SECRET.
