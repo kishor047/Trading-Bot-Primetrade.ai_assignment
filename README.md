@@ -1,52 +1,71 @@
-# Simplified Binance Futures Testnet Trading Bot
+# 🚀 Binance Futures Testnet Trading Bot (Python CLI)
 
-This project provides a small Python CLI for placing **MARKET** and **LIMIT** orders on the Binance **USDT-M Futures Testnet**. It includes validation, structured code separation, and logging of requests, responses, and errors.
+A lightweight Python-based CLI trading bot for executing **MARKET** and **LIMIT** orders on the **Binance USDT-M Futures Testnet**.
 
-## Setup
+This project demonstrates API integration, modular architecture, and automated trading execution using Python.
 
-1. Create a Binance Futures Testnet account and generate API keys.
-2. Install dependencies:
+---
 
+## 📌 Features
+
+- ✅ Place MARKET and LIMIT orders
+- ✅ Binance USDT-M Futures Testnet support
+- ✅ Clean CLI interface
+- ✅ Modular project structure (client, CLI, logging)
+- ✅ Request & response logging
+- ✅ Environment-based API key management
+
+---
+
+## 🧰 Tech Stack
+
+- Python 3.9+
+- Binance Futures API
+- Requests library
+- CLI-based execution
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone repository
 ```bash
+git clone https://github.com/your-username/binance-trading-bot.git
+cd binance-trading-bot
+
+2. Install dependencies
 pip install -r requirements.txt
-```
+🔐 Configuration
 
-3. Export credentials:
+Create a .env file in the root folder:
 
-```bash
-export BINANCE_API_KEY="your_key"
-export BINANCE_API_SECRET="your_secret"
-```
+BINANCE_API_KEY=your_api_key
+BINANCE_API_SECRET=your_api_secret
 
-## Usage
+OR set environment variables manually:
 
-From the repository root:
+Windows (PowerShell)
+setx BINANCE_API_KEY "your_api_key"
+setx BINANCE_API_SECRET "your_api_secret"
+Linux / macOS
+export BINANCE_API_KEY="your_api_key"
+export BINANCE_API_SECRET="your_api_secret"
+▶️ Usage
 
-```bash
-python trading_bot/cli.py --symbol BTCUSDT --side BUY --type MARKET --quantity 0.001
-```
+Run the bot from the project root:
 
-```bash
-python trading_bot/cli.py --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.001 --price 65000
-```
+📈 MARKET ORDER
+python cli.py --symbol BTCUSDT --side BUY --type MARKET --quantity 0.001
+📉 LIMIT ORDER
+python cli.py --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.001 --price 65000
+📊 Output
 
-### Optional environment overrides
+The CLI will display:
 
-```bash
-export BINANCE_TESTNET_BASE_URL="https://testnet.binancefuture.com"
-export TRADING_BOT_LOG_FILE="logs/trading_bot.log"
-```
+Order request summary
+API response (orderId, status, executed quantity, price)
+Success or error messages
 
-## Output
+Logs are saved in:
 
-The CLI prints:
-- Order request summary
-- Order response details (orderId, status, executedQty, avgPrice if available)
-- Success or failure message
-
-Logs are written to `logs/trading_bot.log` by default.
-
-## Notes
-
-- This CLI targets the **Binance Futures Testnet** only.
-- Use **USDT-M** symbols (e.g., `BTCUSDT`).
+logs/trading_bot.log
